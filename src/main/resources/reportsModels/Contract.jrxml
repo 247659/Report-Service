@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport name="Blank_A4" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4ecc5c5a-e7d2-4277-9d8b-0e720efce377">
+    <parameter name="kwota" class="java.lang.Double"/>
+    <parameter name="Data" class="java.util.Date"/>
+    <parameter name="rentalType" class="java.lang.String"/>
+    <parameter name="location" class="java.lang.String"/>
+    <parameter name="id" class="java.lang.Long"/>
+    <parameter name="latitude" class="java.lang.Double"/>
+    <parameter name="longitude" class="java.lang.Double"/>
+    <parameter name="rooms" class="java.lang.Integer"/>
+    <parameter name="available" class="java.lang.String"/>
+    <query language="sql"><![CDATA[]]></query>
+    <background splitType="Stretch"/>
+    <detail>
+        <band height="800" splitType="Stretch">
+            <!-- Tytuł -->
+            <element kind="staticText" uuid="a1b2c3d4-e5f6-47a8-90bc-def123456789" x="0" y="0" width="555" height="30" backcolor="#6EC0FA" hTextAlign="Center" vTextAlign="Middle">
+                <text><![CDATA[Umowa najmu lokalu mieszkalnego]]></text>
+            </element>
+
+            <!-- Linia pusta -->
+            <element kind="staticText" uuid="b1c2d3e4-f567-48a9-90bc-fedcba987654" x="0" y="30" width="555" height="30" backcolor="#FFFFFF" hTextAlign="Center" vTextAlign="Middle">
+                <text><![CDATA[]]></text>
+            </element>
+
+            <!-- Zawarta w dniu -->
+            <element kind="staticText" uuid="c1d2e3f4-6789-4a0b-90bc-123456abcdef" x="0" y="60" width="130" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">
+                <text><![CDATA[Zawarta w dniu]]></text>
+            </element>
+<!--            <element kind="textField" uuid="d1e2f3a4-7890-4b1c-90bc-abcdef123456" x="140" y="60" width="130" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">-->
+<!--                <textFieldExpression><![CDATA[$P{DataZawarcia}]]></textFieldExpression>-->
+<!--            </element>-->
+            <element kind="staticText" uuid="e1f2a3b4-8901-4c2d-90bc-fedcba654321" x="275" y="60" width="30" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">
+                <text><![CDATA[r. w]]></text>
+            </element>
+<!--            <element kind="textField" uuid="f1a2b3c4-9012-4d3e-90bc-123abc456def" x="310" y="60" width="130" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">-->
+<!--                <textFieldExpression><![CDATA[$P{MiejsceZawarcia}]]></textFieldExpression>-->
+<!--            </element>-->
+            <element kind="staticText" uuid="a2b3c4d5-0123-4e4f-90bc-abcdef654321" x="445" y="60" width="110" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">
+                <text><![CDATA[pomiędzy:]]></text>
+            </element>
+
+            <!-- 1) Wynajmujący -->
+            <element kind="staticText" uuid="b2c3d4e5-1234-4f50-90bc-fedcba987123" x="0" y="90" width="25" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">
+                <text><![CDATA[1)]]></text>
+            </element>
+<!--            <element kind="textField" uuid="c2d3e4f5-2345-4051-90bc-123456fedcba" x="30" y="90" width="180" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">-->
+<!--                <textFieldExpression><![CDATA[$P{Wynajmujacy}]]></textFieldExpression>-->
+<!--            </element>-->
+            <element kind="staticText" uuid="d2e3f4a6-3456-4152-90bc-fedcba789012" x="215" y="90" width="160" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">
+                <text><![CDATA[, zamieszkałym/-łą]]></text>
+            </element>
+
+            <!-- nowa linia (oddzielona) -->
+            <element kind="staticText" uuid="e2f3a4b7-4567-4253-90bc-abcdef345678" x="0" y="120" width="555" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">
+                <text><![CDATA[w]]></text>
+            </element>
+<!--            <element kind="textField" uuid="f2a3b4c8-5678-4354-90bc-1234abcd5678" x="20" y="120" width="130" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">-->
+<!--                <textFieldExpression><![CDATA[$P{AdresWynajmujacego}]]></textFieldExpression>-->
+<!--            </element>-->
+            <element kind="staticText" uuid="a3b4c5d9-6789-4455-90bc-fedcba987654" x="160" y="120" width="110" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">
+                <text><![CDATA[przy ul.]]></text>
+            </element>
+<!--            <element kind="textField" uuid="b3c4d5ea-7890-4556-90bc-abcdef123456" x="275" y="120" width="200" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">-->
+<!--                <textFieldExpression><![CDATA[$P{UlicaWynajmujacego}]]></textFieldExpression>-->
+<!--            </element>-->
+
+            <!-- linia ciąg dalszy -->
+            <element kind="staticText" uuid="c3d4e5fb-8901-4657-90bc-123456abcdef" x="380" y="120" width="180" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">
+                <text><![CDATA[, legitymującym/-cą się dowodem]]></text>
+            </element>
+
+            <element kind="staticText" uuid="c3d4e5fb-8901-4657-90bc-123456abcdef" x="0" y="150" width="120" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">
+                <text><![CDATA[osobistym seria i nr]]></text>
+            </element>
+<!--            <element kind="textField" uuid="d3e4f60c-9012-4758-90bc-fedcba654321" x="605" y="120" width="180" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">-->
+<!--                <textFieldExpression><![CDATA[$P{DowodWynajmujacego}]]></textFieldExpression>-->
+<!--            </element>-->
+            <element kind="staticText" uuid="e3f4701d-0123-4859-90bc-abcdef987654" x="300" y="150" width="190" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">
+                <text><![CDATA[, zwanym/-ną dalej Wynajmującym/-cą,]]></text>
+            </element>
+
+            <!-- linia pusta -->
+            <element kind="staticText" uuid="f347812e-1234-495a-90bc-1234fedcba56" x="0" y="150" width="555" height="30" backcolor="#FFFFFF" hTextAlign="Center" vTextAlign="Middle">
+                <text><![CDATA[]]></text>
+            </element>
+
+            <!-- "a" -->
+            <element kind="staticText" uuid="a458123f-2345-4a5b-90bc-fedcba654321" x="0" y="180" width="20" height="30" backcolor="#FFFFFF" hTextAlign="Center" vTextAlign="Middle">
+                <text><![CDATA[a]]></text>
+            </element>
+
+            <!-- 2) Najemca -->
+            <element kind="staticText" uuid="b5692340-3456-4b6c-90bc-123456fedcba" x="25" y="210" width="25" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">
+                <text><![CDATA[2)]]></text>
+            </element>
+<!--            <element kind="textField" uuid="c67a3451-4567-4c7d-90bc-fedcba789012" x="55" y="180" width="180" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">-->
+<!--                <textFieldExpression><![CDATA[$P{Najemca}]]></textFieldExpression>-->
+<!--            </element>-->
+            <element kind="staticText" uuid="d78b4562-5678-4d8e-90bc-abcdef345678" x="240" y="210" width="140" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">
+                <text><![CDATA[, zamieszkałym/-łą]]></text>
+            </element>
+
+            <!-- nowa linia Najemca adres -->
+            <element kind="staticText" uuid="e89c5673-6789-4e9f-90bc-1234abcd5678" x="0" y="240" width="20" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">
+                <text><![CDATA[w]]></text>
+            </element>
+<!--            <element kind="textField" uuid="f9ad6784-7890-4fab-90bc-fedcba987654" x="20" y="210" width="130" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">-->
+<!--                <textFieldExpression><![CDATA[$P{AdresNajemcy}]]></textFieldExpression>-->
+<!--            </element>-->
+            <element kind="staticText" uuid="a0be7895-8901-4bbc-90bc-abcdef654321" x="160" y="240" width="90" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">
+                <text><![CDATA[przy ul.]]></text>
+            </element>
+<!--            <element kind="textField" uuid="b1cf89a6-9012-4ccd-90bc-123abc456def" x="255" y="210" width="180" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">-->
+<!--                <textFieldExpression><![CDATA[$P{UlicaNajemcy}]]></textFieldExpression>-->
+<!--            </element>-->
+
+            <!-- linia dowód Najemcy -->
+            <element kind="staticText" uuid="c3d4e5fb-8901-4657-90bc-123456abcdef" x="380" y="240" width="180" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">
+                <text><![CDATA[, legitymującym/-cą się dowodem]]></text>
+            </element>
+
+            <element kind="staticText" uuid="c3d4e5fb-8901-4657-90bc-123456abcdef" x="0" y="270" width="120" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">
+                <text><![CDATA[osobistym seria i nr]]></text>
+            </element>
+<!--            <element kind="textField" uuid="d3e1bab8-1234-4eef-90bc-123456fedcba" x="650" y="210" width="200" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">-->
+<!--                <textFieldExpression><![CDATA[$P{DowodNajemcy}]]></textFieldExpression>-->
+<!--            </element>-->
+            <element kind="staticText" uuid="e4f2cbc9-2345-4ffd-90bc-fedcba789012" x="300" y="270" width="150" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">
+                <text><![CDATA[, zwanym/-ną dalej Najemcą,]]></text>
+            </element>
+
+            <!-- kolejna linia -->
+            <element kind="staticText" uuid="f503ddda-3456-500e-90bc-abcdef345678" x="0" y="300" width="555" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">
+                <text><![CDATA[o treści następującej:]]></text>
+            </element>
+
+            <!-- § 1 -->
+            <element kind="staticText" uuid="a614eeeb-4567-511f-90bc-1234abcd5678" x="297" y="330" width="30" height="30" backcolor="#6EC0FA" hTextAlign="Center" vTextAlign="Middle">
+                <text><![CDATA[§ 1]]></text>
+            </element>
+            <element kind="staticText" uuid="b725fffc-5678-5220-90bc-fedcba987654" x="40" y="360" width="520" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">
+                <text><![CDATA[Wynajmujący/-ca oświadcza, że jest właścicielem/-lką lokalu mieszkalnego o pow.]]></text>
+            </element>
+<!--            <element kind="textField" uuid="c836001d-6789-5331-90bc-123456fedcba" x="450" y="270" width="70" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">-->
+<!--                <textFieldExpression><![CDATA[$P{Powierzchnia}]]></textFieldExpression>-->
+<!--            </element>-->
+            <element kind="staticText" uuid="d947112e-7890-5442-90bc-fedcba654321" x="50" y="390" width="55" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">
+                <text><![CDATA[mkw., składającego się z]]></text>
+            </element>
+<!--            <element kind="textField" uuid="ea58223f-8901-5553-90bc-abcdef123456" x="580" y="270" width="40" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">-->
+<!--                <textFieldExpression><![CDATA[$P{LiczbaPokoi}]]></textFieldExpression>-->
+<!--            </element>-->
+            <element kind="staticText" uuid="fb693340-9012-5664-90bc-123abc456def" x="300" y="390" width="195" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">
+                <text><![CDATA[ pokoi, przedpokoju, łazienki i kuchni,]]></text>
+            </element>
+            <element kind="staticText" uuid="fb693340-9012-5664-90bc-123abc456def" x="0" y="420" width="195" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">
+                <text><![CDATA[położonego w]]></text>
+            </element>
+<!--            <element kind="textField" uuid="0c7a4341-0123-5775-90bc-fedcba987654" x="820" y="270" width="190" height="30" backcolor="#FFFFFF" hTextAlign="Left" vTextAlign="Middle">-->
+<!--                <textFieldExpression><![CDATA[$P{AdresLokalu}]]></textFieldExpression>-->
+<!--            </element>-->
+            <element kind="staticText" uuid="a614eeeb-4567-511f-90bc-1234abcd5678" x="297" y="450" width="30" height="30" backcolor="#6EC0FA" hTextAlign="Center" vTextAlign="Middle">
+                <text><![CDATA[§ 2]]></text>
+            </element>
+            <element kind="staticText" uuid="a614eeeb-4567-511f-90bc-1234abcd5678" x="0" y="480" width="400" height="30" backcolor="#6EC0FA" hTextAlign="Left" vTextAlign="Middle">
+                <text><![CDATA[Wynajmująca oddaje Najemcy do używania ww. lokal wraz z wyposażeniem.]]></text>
+            </element>
+            <element kind="staticText" uuid="a614eeeb-4567-511f-90bc-1234abcd5678" x="297" y="510" width="30" height="30" backcolor="#6EC0FA" hTextAlign="Center" vTextAlign="Middle">
+                <text><![CDATA[§ 3]]></text>
+            </element>
+        </band>
+    </detail>
+    <summary height="42" splitType="Stretch"/>
+</jasperReport>
+

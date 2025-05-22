@@ -42,4 +42,23 @@ public class ReportController {
             return ResponseEntity.status(500).body("Błąd podczas generowania raportu".getBytes());
         }
     }
+
+    @GetMapping("/contract")
+    public ResponseEntity<byte[]> generateContract() {
+        try {
+            JasperPrint jasperPrint;
+            jasperPrint = reportService.createContract();
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            JasperExportManager.exportReportToPdfStream(jasperPrint, byteArrayOutputStream);
+            byte[] pdfBytes = byteArrayOutputStream.toByteArray();
+
+            return ResponseEntity.ok()
+                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=report.pdf")
+                    .header(HttpHeaders.CONTENT_TYPE, "application/pdf")
+                    .body(pdfBytes);
+        } catch (JRException e) {
+            e.printStackTrace();
+            return ResponseEntity.status(500).body("Błąd podczas generowania raportu".getBytes());
+        }
+    }
 }
