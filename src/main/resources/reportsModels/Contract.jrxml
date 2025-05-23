@@ -1,14 +1,24 @@
 <!-- Created with Jaspersoft Studio version 7.0.2.final using JasperReports Library version 7.0.2-31532122640f516c6d17238ae0e41a08113d5ac0  -->
 <jasperReport name="Contract" language="java" columnCount="1" pageWidth="595" pageHeight="902" whenNoDataType="BlankPage" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4ecc5c5a-e7d2-4277-9d8b-0e720efce377">
-	<parameter name="kwota" class="java.lang.Double"/>
 	<parameter name="Data" class="java.util.Date"/>
-	<parameter name="rentalType" class="java.lang.String"/>
 	<parameter name="location" class="java.lang.String"/>
-	<parameter name="id" class="java.lang.Long"/>
-	<parameter name="latitude" class="java.lang.Double"/>
-	<parameter name="longitude" class="java.lang.Double"/>
 	<parameter name="rooms" class="java.lang.Integer"/>
-	<parameter name="available" class="java.lang.String"/>
+	<parameter name="city" class="java.lang.String"/>
+	<parameter name="landlordName" class="java.lang.String"/>
+	<parameter name="landlordCity" class="java.lang.String"/>
+	<parameter name="landlordAddress" class="java.lang.String"/>
+	<parameter name="landlordIdNumber" class="java.lang.String"/>
+	<parameter name="tenantName" class="java.lang.String"/>
+	<parameter name="tenantCity" class="java.lang.String"/>
+	<parameter name="tenantAddress" class="java.lang.String"/>
+	<parameter name="tenantIdNumber" class="java.lang.String"/>
+	<parameter name="area" class="java.lang.Double"/>
+	<parameter name="sinceDate" class="java.util.Date"/>
+	<parameter name="untilDate" class="java.util.Date"/>
+	<parameter name="fee" class="java.lang.Double"/>
+	<parameter name="payDay" class="java.lang.Integer"/>
+	<parameter name="transmissionDate" class="java.util.Date"/>
+	<parameter name="deposit" class="java.lang.Double"/>
 	<query language="sql"><![CDATA[]]></query>
 	<background splitType="Stretch"/>
 	<detail>
@@ -28,7 +38,8 @@ o treści następującej:
                                                                § 1
 Wynajmujący/-ca oświadcza, że jest właścicielem/-lką lokalu mieszkalnego o pow. ………………. mkw., składającego się z ………………. pokoi, przedpokoju, łazienki i kuchni, położonego w ….............................…………………………………..
                                                                § 2
-Wynajmująca oddaje Najemcy do używania ww. lokal wraz z wyposażeniem.                                                                        § 3
+Wynajmująca oddaje Najemcy do używania ww. lokal wraz z wyposażeniem.
+                                                               § 3
 Umowa zostaje zawarta na okres od ..….................. do …..........................
                                                                § 4
 Najemca zobowiązuje się do zapłaty Wynajmującemu/-cej czynszu najmu w wysokości ………………….. zł miesięcznie. Czynsz będzie płatny z góry w terminie do …………………….. każdego miesiąca.
@@ -43,6 +54,60 @@ Wydanie lokalu Najemcy nastąpi w dniu …........................... .
                                                                § 9
 W kwestii wypowiedzenia niniejszej umowy zastosowanie mają przepisy Kodeksu cywilnego ]]></text>
 				<property name="com.jaspersoft.studio.unit.width" value="px"/>
+			</element>
+			<element kind="textField" uuid="4d3be6a2-1641-46c4-9da0-5892090331df" x="100" y="30" width="100" height="20">
+				<expression><![CDATA[$P{Data}]]></expression>
+			</element>
+			<element kind="textField" uuid="4f47bf8d-f3ed-4ca5-8356-845b029aac8f" x="250" y="275" width="100" height="20">
+				<expression><![CDATA[$P{rooms}]]></expression>
+			</element>
+			<element kind="textField" uuid="818f6bf7-710e-42a2-b85b-24442788eddd" x="230" y="30" width="83" height="20">
+				<expression><![CDATA[$P{city}]]></expression>
+			</element>
+			<element kind="textField" uuid="11dc42db-73c0-41e5-a48a-cc7c55c5a975" x="17" y="50" width="173" height="20">
+				<expression><![CDATA[$P{landlordName}]]></expression>
+			</element>
+			<element kind="textField" uuid="0784cd16-beef-4c35-9385-937f24da8f58" x="20" y="75" width="113" height="20">
+				<expression><![CDATA[$P{landlordCity}]]></expression>
+			</element>
+			<element kind="textField" uuid="fe862415-ee3c-44b0-bae1-68ff09e06ace" x="190" y="75" width="170" height="20">
+				<expression><![CDATA[$P{landlordAddress}]]></expression>
+			</element>
+			<element kind="textField" uuid="90e4d959-9cf3-4104-a5a4-d3cac3027842" x="150" y="95" width="130" height="20">
+				<expression><![CDATA[$P{landlordIdNumber}]]></expression>
+			</element>
+			<element kind="textField" uuid="36a72b8e-4bda-415f-ab55-cf7782b73011" x="20" y="140" width="183" height="20">
+				<expression><![CDATA[$P{tenantName}]]></expression>
+			</element>
+			<element kind="textField" uuid="f5e83daf-4238-4933-babc-5750f358ee39" x="20" y="165" width="123" height="20">
+				<expression><![CDATA[$P{tenantCity}]]></expression>
+			</element>
+			<element kind="textField" uuid="52492368-9e1b-4dc1-985f-7a5db7ea5132" x="200" y="165" width="180" height="20">
+				<expression><![CDATA[$P{tenantAddress}]]></expression>
+			</element>
+			<element kind="textField" uuid="f01131d7-43c4-430f-9948-898af5dc5ed4" x="150" y="185" width="140" height="20">
+				<expression><![CDATA[$P{tenantIdNumber}]]></expression>
+			</element>
+			<element kind="textField" uuid="4f47bf8d-f3ed-4ca5-8356-845b029aac8f" x="20" y="275" width="100" height="20">
+				<expression><![CDATA[$P{area}]]></expression>
+			</element>
+			<element kind="textField" uuid="4f47bf8d-f3ed-4ca5-8356-845b029aac8f" x="120" y="295" width="300" height="20">
+				<expression><![CDATA[$P{location}]]></expression>
+			</element>
+			<element kind="textField" uuid="7d98b1c5-6521-4f0b-b3cd-9be87f55caff" x="235" y="385" width="93" height="17">
+				<expression><![CDATA[$P{sinceDate}]]></expression>
+			</element>
+			<element kind="textField" uuid="75f30609-2991-42d3-8bac-c4381f1654af" x="350" y="385" width="93" height="17">
+				<expression><![CDATA[$P{untilDate}]]></expression>
+			</element>
+			<element kind="textField" uuid="a7708bf3-6fee-4957-9d5f-63d8f12c8050" x="20" y="450" width="100" height="15">
+				<expression><![CDATA[$P{fee}]]></expression>
+			</element>
+			<element kind="textField" uuid="be622c56-ee4d-4366-a8ea-efba57ab3c2d" x="20" y="475" width="100" height="15">
+				<expression><![CDATA[$P{payDay}]]></expression>
+			</element>
+			<element kind="textField" uuid="2b6b246b-0150-4eeb-b7a8-0b79e5f9431b" x="250" y="650" width="120" height="13">
+				<expression><![CDATA[$P{transmissionDate}]]></expression>
 			</element>
 		</band>
 	</detail>
@@ -66,6 +131,9 @@ Umowę sporządzono w dwóch jednobrzmiących egzemplarzach, po jednym dla każd
 		</element>
 		<element kind="staticText" uuid="84634f63-d0ee-4441-ab53-b9f29114fb38" x="0" y="540" width="554" height="30" vTextAlign="Bottom">
 			<text><![CDATA[              ....................................                                                                                   ....................................]]></text>
+		</element>
+		<element kind="textField" uuid="09aa2a21-438f-48b5-96ae-cb1bf05d4c05" x="454" y="175" width="120" height="15">
+			<expression><![CDATA[$P{deposit}]]></expression>
 		</element>
 	</summary>
 </jasperReport>

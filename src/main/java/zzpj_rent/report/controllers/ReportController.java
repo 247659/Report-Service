@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import zzpj_rent.report.dtos.request.ContractRequest;
 import zzpj_rent.report.services.ReportService;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperExportManager;
@@ -44,10 +45,10 @@ public class ReportController {
     }
 
     @GetMapping("/contract")
-    public ResponseEntity<byte[]> generateContract() {
+    public ResponseEntity<byte[]> generateContract(@RequestBody ContractRequest request) {
         try {
             JasperPrint jasperPrint;
-            jasperPrint = reportService.createContract();
+            jasperPrint = reportService.createContract(request);
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             JasperExportManager.exportReportToPdfStream(jasperPrint, byteArrayOutputStream);
             byte[] pdfBytes = byteArrayOutputStream.toByteArray();
